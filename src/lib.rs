@@ -16,7 +16,7 @@ pub fn run() {
         Ok(name) => name,
     };
     let openai_key_name: String = match env::var("openai_key_name") {
-        Err(_) => "chatmichael".to_string(),
+        Err(_) => "miley".to_string(),
         Ok(name) => name,
     };
 
