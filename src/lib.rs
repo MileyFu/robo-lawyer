@@ -12,7 +12,7 @@ pub fn run() {
     };
 
     let channel: String = match env::var("channel") {
-        Err(_) => "robo-lawyer".to_string(),
+        Err(_) => "chatgpt".to_string(),
         Ok(name) => name,
     };
     let openai_key_name: String = match env::var("openai_key_name") {
@@ -22,7 +22,7 @@ pub fn run() {
 
     listen_to_channel(&workspace, &channel, |sm| {
         let cr = CompletionRequest {
-            prompt: "I want you to act as my legal advisor. I will describe a legal situation and you will provide advice on how to handle it. My question is \"".to_owned() + &sm.text + "\"",
+            prompt: "I want you to act as my Chinese to English or English to Chinese translator. Please give me correct and accurate translation without adding your own words. The text I want you to translate is \"".to_owned() + &sm.text + "\"",
             max_tokens: 2048,
             ..Default::default()
         };
