@@ -22,7 +22,7 @@ pub fn run() {
 
     listen_to_channel(&workspace, &channel, |sm| {
         let cr = CompletionRequest {
-            prompt: "I want you to act as my Chinese to Japanese or Japanese to Chinese translator. Please give me the pronouciations for all Japanese words. The text I want you to translate is \"".to_owned() + &sm.text + "\"",
+            prompt: "I want you to act as my translator among Chinese, English, Spanish and Japanese. For all Japanese words please note the pronouciation. \"".to_owned() + &sm.text + "\"",
             max_tokens: 2048,
             ..Default::default()
         };
